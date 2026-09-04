@@ -1,0 +1,11 @@
+user=input("Rock, Paper, or Scissors? ")
+bot=random.choice(["Rock", "Paper", "Scissors"])
+
+print(f"You chose {user}, and I chose {bot}.")
+
+if user == bot:
+    print("It's a tie!")
+elif (user == "Rock" and bot == "Scissors") or (user == "Paper" and bot == "Rock") or (user == "Scissors" and bot == "Paper"):
+    print("You win!")
+else:
+    print("I win!")
