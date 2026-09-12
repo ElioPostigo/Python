@@ -1,11 +1,22 @@
-user=input("Rock, Paper, or Scissors? ")
-bot=random.choice(["Rock", "Paper", "Scissors"])
+import random
 
-print(f"You chose {user}, and I chose {bot}.")
+print("Let's play rock, paper, or scissors")
 
-if user == bot:
-    print("It's a tie!")
-elif (user == "Rock" and bot == "Scissors") or (user == "Paper" and bot == "Rock") or (user == "Scissors" and bot == "Paper"):
-    print("You win!")
+player_choice = input("\nChoose rock, paper, or scissors: ").lower()
+choices = ["rock", "paper", "scissors"]
+computer_choice = random.choice(choices)
+print(f"Computer chose: {computer_choice}")
+
+if (player_choice == "rock" and computer_choice == "scissors") or (player_choice == "scissors" and computer_choice == "paper") or (player_choice == "paper" and computer_choice == "rock"):
+  winner = "Player"
+elif player_choice == computer_choice:
+  winner = "Tie"
 else:
-    print("I win!")
+  winner = "Computer"
+
+if winner == "Player":
+  print("You won")
+elif winner == "Computer":
+  print("Computer won")
+else:
+  print("It's a tie")
